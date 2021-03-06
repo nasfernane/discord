@@ -1,0 +1,22 @@
+{
+    "name": "discord",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "scss": "node-sass sass/main.scss sass/style.css -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nasfernane/discord.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nasfernane/discord/issues"
+    },
+    "homepage": "https://github.com/nasfernane/discord#readme",
+    "dependencies": {
+        "node-sass": "^5.0.0"
+    }
+}
