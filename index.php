@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/sass/style.css">
-    <title>Discord</title>
-</head>
-<body>
-    <h1>blabladodo</h1>
-    
-</body>
-</html>
+<?php
+
+require './php/components/_header.php';
+require './php/views/main.php';
+require './php/components/_footer.php';
+
+
+?>
