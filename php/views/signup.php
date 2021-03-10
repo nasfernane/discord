@@ -16,6 +16,6 @@
             <input type="password" id="signUpPw">
         </div>
         <button class="signupContainer__form--btn" type="submit">Continuer</button>
-        <a href="?page=login">Tu as déjà un compte ?</a>
     </form>
+    <a href="?page=login">Tu as déjà un compte ?</a>
 </div>
