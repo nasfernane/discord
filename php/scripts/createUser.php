@@ -1,13 +1,13 @@
 <?php
 
-if (isset($_POST['email']) && isset($_POST['user']) && isset($_POST['password'])) {
+require 'database.php';
 
+if (isset($_POST['email']) && isset($_POST['user']) && isset($_POST['password'])) {
+    // récupération des informations et hashage du mot de passe
     $email = $_POST['email'];
     $user = $_POST['user'];
     $password = $_POST['password'];
-
-    $dbd = new PDO('mysql:host=localhost;dbname=discord-php', 'root', '');
-    $dbd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     $createUser = $dbd->prepare("
         INSERT INTO 
@@ -23,11 +23,5 @@ if (isset($_POST['email']) && isset($_POST['user']) && isset($_POST['password'])
 
     header('location: /?page=login');
     exit;
-
-
-
-    
-
-
 }
 
