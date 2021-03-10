@@ -1,3 +1,5 @@
+<?php if (!isset($_SESSION['userid'])) header('location: /?page=login') ?>
+
 <main class="mainWrap">
 <header class="mainWrap__header">
     <p class="mainWrap__header__title">Simplon Paca</p>
@@ -27,3 +29,4 @@
 </div>
 
 </main>
+

@@ -1,89 +1,112 @@
+.logBackground {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/img/logbackground.jpg');
+    background-size: cover;
+}
+
 /* css global reset */
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
 
 html {
-  font-size: 62.5%; }
+    font-size: 62.5%;
+}
 
 body {
-  box-sizing: border-box;
-  font-weight: 400;
-  letter-spacing: 0.05rem; }
+    box-sizing: border-box;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
 
 body {
-  line-height: 1.6;
-  font-weight: 300;
-  font-family: 'Lato', sans-serif;
-  color: #777;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+    line-height: 1.6;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
 
 .mainWrap {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.6rem;
-  color: #fff; }
-  .mainWrap__header {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    color: #fff;
+}
+.mainWrap__header {
     height: 5vh;
     display: flex;
     width: 100%;
-    border-bottom: 1px solid #000000; }
-    .mainWrap__header__title {
-      background-color: #2f3136;
-      width: 13%;
-      padding: 1rem 1rem; }
-    .mainWrap__header__content {
-      background-color: #36393f;
-      width: 87%;
-      padding: 1rem 1rem;
-      display: flex;
-      justify-content: space-between; }
-      .mainWrap__header__content .navBar {
-        display: flex;
-        justify-content: space-around;
-        align-items: center; }
-      .mainWrap__header__content input {
-        height: 2.4rem;
-        width: 14rem;
-        outline: none;
-        border: none;
-        border-radius: 0.4rem;
-        background-color: #202225;
-        color: #99aab5;
-        padding: 1rem 1rem;
-        margin: 1rem; }
-        .mainWrap__header__content input:focus {
-          width: 26rem; }
-      .mainWrap__header__content img {
-        height: 2rem;
-        width: 2rem;
-        cursor: pointer;
-        margin: 0rem 1rem; }
-  .mainWrap__content {
+    border-bottom: 1px solid #000000;
+}
+.mainWrap__header__title {
+    background-color: #2f3136;
+    width: 13%;
+    padding: 1rem 1rem;
+}
+.mainWrap__header__content {
+    background-color: #36393f;
+    width: 87%;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.mainWrap__header__content .navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainWrap__header__content input {
+    height: 2.4rem;
+    width: 14rem;
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #202225;
+    color: #99aab5;
+    padding: 1rem 1rem;
+    margin: 1rem;
+}
+.mainWrap__header__content input:focus {
+    width: 26rem;
+}
+.mainWrap__header__content img {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    margin: 0rem 1rem;
+}
+.mainWrap__content {
     height: 95vh;
     width: 100%;
-    display: flex; }
-    .mainWrap__content section {
-      padding: 1rem 1rem; }
-    .mainWrap__content .channelSection,
-    .mainWrap__content .userSection {
-      width: 13%;
-      height: 100%;
-      background-color: #2f3136; }
-    .mainWrap__content .mainSection {
-      width: 74%;
-      height: 100%;
-      background-color: #36393f; }
+    display: flex;
+}
+.mainWrap__content section {
+    padding: 1rem 1rem;
+}
+.mainWrap__content .channelSection,
+.mainWrap__content .userSection {
+    width: 13%;
+    height: 100%;
+    background-color: #2f3136;
+}
+.mainWrap__content .mainSection {
+    width: 74%;
+    height: 100%;
+    background-color: #36393f;
+}
