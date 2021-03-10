@@ -1,6 +1,9 @@
 .logBackground {
+    position: absolute;
+    top: 0;
     height: 100vh;
     width: 100vw;
-    background-image: url('../../assets/img/logbackground.jpg') center no-repeat;
+    background-image: url('../../assets/img/logbackground.jpg');
     background-size: cover;
+    z-index: -999;
 }
