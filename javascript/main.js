@@ -9,9 +9,12 @@ function getMessages() {
             .map(function (message) {
                 return `
             <div class="message">
-                <span class="date">${message.sentAt.substring(11, 16)}</span>
-                <span class="author">${message.author}</span>
-                <span class="content">${message.content}</span>
+                <img>
+                <div>
+                    <span class="date">${message.sentAt.substring(11, 16)}</span>
+                    <span class="author">${message.author}</span>
+                    <span class="content">${message.content}</span>
+                </div>
             </div>
             
             `;
