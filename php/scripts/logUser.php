@@ -32,7 +32,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('location: /?page=login');
         // echo "wrong user ";
     }
-
-
     exit;
 }

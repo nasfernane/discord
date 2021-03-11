@@ -77,6 +77,40 @@
             width: 74%;
             height: 100%;
             background-color: $color-dark;
+
+            form {
+                width: 100%;
+                display: flex;
+
+                label {
+                    width: 4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $color-lighter;
+                    border-radius: 0.4rem 0 0 0.4rem;
+                    padding: 0rem 1rem;
+                    cursor: pointer;
+
+                    img {
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                }
+                input {
+                    width: 100%;
+                    border-radius: 0.4rem;
+                    border: 0px;
+                    padding: 1rem 0.5rem;
+                    background-color: $color-lighter;
+                    color: $color-white;
+
+                    &:focus {
+                        outline: none;
+                        border: 0px;
+                    }
+                }
+            }
         }
     }
 }

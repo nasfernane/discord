@@ -72,7 +72,7 @@ body {
         border: none;
         border-radius: 0.4rem;
         background-color: #202225;
-        color: #99aab5;
+        color: #dcddde;
         padding: 1rem 1rem;
         margin: 1rem; }
         .mainWrap__header__content input:focus {
@@ -97,6 +97,31 @@ body {
       width: 74%;
       height: 100%;
       background-color: #36393f; }
+      .mainWrap__content .mainSection form {
+        width: 100%;
+        display: flex; }
+        .mainWrap__content .mainSection form label {
+          width: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #40444b;
+          border-radius: 0.4rem 0 0 0.4rem;
+          padding: 0rem 1rem;
+          cursor: pointer; }
+          .mainWrap__content .mainSection form label img {
+            height: 2rem;
+            width: 2rem; }
+        .mainWrap__content .mainSection form input {
+          width: 100%;
+          border-radius: 0.4rem;
+          border: 0px;
+          padding: 1rem 0.5rem;
+          background-color: #40444b;
+          color: #fff; }
+          .mainWrap__content .mainSection form input:focus {
+            outline: none;
+            border: 0px; }
 
 .loginContainer {
   margin: 0 auto;
@@ -116,7 +141,7 @@ body {
     margin-bottom: 0.5rem; }
   .loginContainer h2 {
     margin-bottom: 2rem;
-    color: #99aab5; }
+    color: #dcddde; }
   .loginContainer p {
     align-self: flex-start;
     font-size: 1.4rem;
@@ -146,7 +171,7 @@ body {
         font-size: 1.2rem;
         text-transform: uppercase;
         margin-bottom: 0.5rem;
-        color: #99aab5; }
+        color: #dcddde; }
       .loginContainer__form__field input {
         color: #fff;
         font-size: 1.6rem;
@@ -222,7 +247,7 @@ body {
         font-size: 1.2rem;
         text-transform: uppercase;
         margin-bottom: 0.5rem;
-        color: #99aab5; }
+        color: #dcddde; }
       .signupContainer__form__field input {
         color: #fff;
         font-size: 1.6rem;

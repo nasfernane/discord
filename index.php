@@ -1,4 +1,5 @@
 <?php
+
 require 'php/scripts/database.php';
 
 require './php/components/_header.php';
