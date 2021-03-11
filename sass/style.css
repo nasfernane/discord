@@ -61,6 +61,9 @@ body {
       padding: 1rem 1rem;
       display: flex;
       justify-content: space-between; }
+      .mainWrap__header__content .navChan {
+        display: flex;
+        align-items: center; }
       .mainWrap__header__content .navBar {
         display: flex;
         justify-content: space-around;
@@ -97,6 +100,26 @@ body {
       width: 74%;
       height: 100%;
       background-color: #36393f; }
+      .mainWrap__content .mainSection .messages .message {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem; }
+        .mainWrap__content .mainSection .messages .message img {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 2rem; }
+        .mainWrap__content .mainSection .messages .message__content {
+          display: flex;
+          flex-direction: column; }
+          .mainWrap__content .mainSection .messages .message__content--infos {
+            display: flex;
+            align-items: flex-end; }
+            .mainWrap__content .mainSection .messages .message__content--infos .author {
+              margin-right: 1rem;
+              color: #dcddde;
+              font-style: small-caps; }
+            .mainWrap__content .mainSection .messages .message__content--infos .date {
+              font-size: 1.2rem; }
       .mainWrap__content .mainSection form {
         width: 100%;
         display: flex; }

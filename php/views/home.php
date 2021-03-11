@@ -4,7 +4,10 @@
 <header class="mainWrap__header">
     <p class="mainWrap__header__title">Simplon Paca</p>
     <div class="mainWrap__header__content">
-        <p># annonces</p>
+        <div class="navChan">   
+            <img src="/assets/img/hashtag.png" alt="">
+            <p>annonces</p>
+        </div>
         <div class="navBar">
             <img src="../../assets/img/bell.png" alt="Bell">
             <img src="../../assets/img/pin.png" alt="Pin">
@@ -27,7 +30,7 @@
 
         <form class="mainSection__form" action="/php/scripts/handler.php?task=write" method="POST">
             <label for="msgInput"><img src="/assets/img/plus.png" alt=""></label>
-            <input type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live">
+            <input type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live" autocomplete="off">
         </form>
     </section>
 

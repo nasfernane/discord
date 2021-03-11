@@ -26,6 +26,11 @@
             display: flex;
             justify-content: space-between;
 
+            .navChan {
+                display: flex;
+                align-items: center;
+            }
+
             .navBar {
                 display: flex;
                 justify-content: space-around;
@@ -77,6 +82,40 @@
             width: 74%;
             height: 100%;
             background-color: $color-dark;
+
+            .messages {
+                .message {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 1rem;
+
+                    img {
+                        width: 4rem;
+                        height: 4rem;
+                        margin-right: 2rem;
+                    }
+
+                    &__content {
+                        display: flex;
+                        flex-direction: column;
+
+                        &--infos {
+                            display: flex;
+                            align-items: flex-end;
+
+                            .author {
+                                margin-right: 1rem;
+                                color: $color-grey;
+                                font-style: small-caps;
+                            }
+
+                            .date {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
 
             form {
                 width: 100%;
