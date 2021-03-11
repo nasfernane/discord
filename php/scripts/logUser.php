@@ -6,7 +6,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = $dbd->prepare("
+    $user = $db->prepare("
         SELECT * 
         FROM users
         WHERE email = '{$email}'
@@ -22,7 +22,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         // si les identifiants sont corrects, crée la session et ajoute son id avant de rediriger vers home
         if ($isCorrectPw) {
+            session_start();
+            $id_session = session_id();
             $_SESSION['userid'] = $user[0]['idUser'];
+            $_SESSION['userName'] = $user[0]['name'];
             header('location: /');
         } else {
             header('location: /?page=login');
@@ -32,5 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('location: /?page=login');
         // echo "wrong user ";
     }
+
+
     exit;
 }

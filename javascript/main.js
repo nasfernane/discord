@@ -1,27 +1,50 @@
-// const msgForm = document.querySelector('.mainSection__form');
+function getMessages() {
+    const ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.open('GET', '../php/scripts/handler.php');
 
-// msgForm.addEventListener('submit', async function (e) {
-//     e.preventDefault();
-//     const message = document.querySelector('#msgInput').value;
+    ajaxRequest.onload = function () {
+        const results = JSON.parse(ajaxRequest.responseText);
+        const html = results
+            .reverse()
+            .map(function (message) {
+                return `
+            <div class="message">
+                <span class="date">${message.sentAt.substring(11, 16)}</span>
+                <span class="author">${message.author}</span>
+                <span class="content">${message.content}</span>
+            </div>
+            
+            `;
+            })
+            .join('');
 
-//     try {
-//         const res = await axios({
-//             method: 'GET',
-//             url: `/php/scripts/functions.php`,
-//             data: {
-//                 body: `sendMessage(${message})`,
-//             },
-//         });
+        const chatBox = document.querySelector('.messages');
 
-//         console.log(res);
+        chatBox.innerHTML = html;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    };
 
-//         // if (res.data.status === 'success') {
-//         //     await showAlert('success', 'Facture modifiée');
-//         //     window.setTimeout(() => {
-//         //         location.reload();
-//         //     }, 1500);
-//         // }
-//     } catch (err) {
-//         console.log('error', err.response.data.message);
-//     }
-// });
+    ajaxRequest.send();
+}
+
+function postMessage(event) {
+    event.preventDefault();
+    const content = document.querySelector('#msgInput');
+
+    const data = new FormData();
+    data.append('content', content.value);
+
+    const ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.open('POST', '../php/scripts/handler.php?task=write');
+
+    ajaxRequest.onload = function () {
+        getMessages();
+    };
+
+    ajaxRequest.send(data);
+    document.querySelector('#msgInput').value = '';
+}
+
+window.addEventListener('load', getMessages);
+
+document.querySelector('.mainSection__form').addEventListener('submit', postMessage);

@@ -19,12 +19,16 @@
     <p>Salons</p>
     </section>
 
+
     <section class="mainSection">
-    <p>Main view</p>
-    <form method="POST" class="mainSection__form" action="/php/scripts/functions.php">
-        <label for="msgInput"><img src="/assets/img/plus.png" alt=""></label>
-        <input type="text" id ="msgInput" name="message" class="mainSection__form--input" placeholder="Envoyer un message à #live">
-    </form>
+        <!-- test -->
+        <div class="messages">
+        </div>
+
+        <form class="mainSection__form" action="/php/scripts/handler.php?task=write" method="POST">
+            <label for="msgInput"><img src="/assets/img/plus.png" alt=""></label>
+            <input type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live">
+        </form>
     </section>
 
     <section class="userSection">
