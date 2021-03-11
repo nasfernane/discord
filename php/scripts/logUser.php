@@ -22,20 +22,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         // si les identifiants sont corrects, crée la session et ajoute son id avant de rediriger vers home
         if ($isCorrectPw) {
-            session_start();
-            $id_session = session_id();
             $_SESSION['userid'] = $user[0]['idUser'];
-            // header('location: ?page/home');
+            header('location: /');
         } else {
-            var_dump($isCorrectPw);
-            var_dump($password);
-            var_dump($userPassword);
+            header('location: /?page=login');
             
         }
     } else {
-        echo "wrong user ";
+        header('location: /?page=login');
+        // echo "wrong user ";
     }
 
-    // header('location: /?page=login');
+
     exit;
 }

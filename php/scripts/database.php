@@ -1,7 +1,10 @@
 <?php
 
-// connexion à la bdd
+// création de la session
+session_start();
+$id_session = session_id();
 
+// connexion à la bdd
 $host = 'mysql:host=mysql-nasfernane.alwaysdata.net;dbname=nasfernane_discordphp';
 $user = '216502_nf';
 $password = 'blabladodo1337';

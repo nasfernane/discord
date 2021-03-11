@@ -1,4 +1,4 @@
-<?php // if (!isset($_SESSION['userid'])) header('location: /?page=login') ?>
+<?php if (!isset($_SESSION['userid'])) header('location: /?page=login') ?>
 
 <main class="mainWrap">
 <header class="mainWrap__header">
