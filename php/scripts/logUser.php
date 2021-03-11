@@ -8,7 +8,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     $user = $dbd->prepare("
         SELECT * 
-        FROM user
+        FROM users
         WHERE email = '{$email}'
      ");
 
