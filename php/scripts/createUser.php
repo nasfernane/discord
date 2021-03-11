@@ -8,7 +8,7 @@ if (isset($_POST['email']) && isset($_POST['user']) && isset($_POST['password'])
     $user = $_POST['user'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $createUser = $dbd->prepare("
+    $createUser = $db->prepare("
         INSERT INTO 
         users (email, name, password)
         VALUES (:email, :name, :password)

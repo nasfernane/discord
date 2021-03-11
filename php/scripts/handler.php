@@ -22,7 +22,7 @@ function displayMessages() {
         SELECT * 
         FROM messages 
         ORDER BY sentAt DESC
-        LIMIT 14
+        LIMIT 12
     ");
 
     // 2. traite les résultats

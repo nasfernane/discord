@@ -18,8 +18,21 @@
 </header>
 
 <div class="mainWrap__content">
+
     <section class="channelSection">
-    <p>Salons</p>
+        <h3>Salons textuels</h3>
+        <div class="channelSection__channel">
+            <img src="/assets/img/hashtag.png" alt="">
+            <p>general</p>
+        </div>
+        <div class="channelSection__channel">
+            <img src="/assets/img/hashtag.png" alt="">
+            <p>live</p>
+        </div>
+        <div class="channelSection__channel">
+            <img src="/assets/img/hashtag.png" alt="">
+            <p>tutos</p>
+        </div>
     </section>
 
 

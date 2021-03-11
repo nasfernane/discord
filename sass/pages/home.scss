@@ -16,7 +16,7 @@
         &__title {
             background-color: $color-darker;
             width: 13%;
-            padding: 1rem 1rem;
+            padding: 1rem 2rem;
         }
 
         &__content {
@@ -78,10 +78,35 @@
             background-color: $color-darker;
         }
 
+        .channelSection {
+            padding-left: 2rem;
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            &__channel {
+                display: flex;
+                align-items: center;
+
+                img {
+                    height: 1.6rem;
+                    width: 1.6rem;
+                    margin-right: 0.6rem;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+
         .mainSection {
             width: 74%;
             height: 100%;
             background-color: $color-dark;
+            padding: 2rem 2rem;
 
             .messages {
                 .message {
@@ -100,17 +125,23 @@
                         flex-direction: column;
 
                         &--infos {
-                            display: flex;
-                            align-items: flex-end;
+                            // display: flex;
+                            // align-items: flex-end;
+
+                            span {
+                                padding-bottom: 0;
+                            }
 
                             .author {
-                                margin-right: 1rem;
-                                color: $color-grey;
+                                margin-right: 0.5rem;
+                                color: $color-blue;
                                 font-style: small-caps;
+                                font-size: 1.8rem;
                             }
 
                             .date {
-                                font-size: 1.2rem;
+                                font-size: 1.4rem;
+                                color: #71757c;
                             }
                         }
                     }

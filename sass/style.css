@@ -54,7 +54,7 @@ body {
     .mainWrap__header__title {
       background-color: #2f3136;
       width: 13%;
-      padding: 1rem 1rem; }
+      padding: 1rem 2rem; }
     .mainWrap__header__content {
       background-color: #36393f;
       width: 87%;
@@ -96,10 +96,27 @@ body {
       width: 13%;
       height: 100%;
       background-color: #2f3136; }
+    .mainWrap__content .channelSection {
+      padding-left: 2rem; }
+      .mainWrap__content .channelSection h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase; }
+      .mainWrap__content .channelSection__channel {
+        display: flex;
+        align-items: center; }
+        .mainWrap__content .channelSection__channel img {
+          height: 1.6rem;
+          width: 1.6rem;
+          margin-right: 0.6rem; }
+        .mainWrap__content .channelSection__channel p {
+          font-size: 1.6rem;
+          padding-bottom: 0.5rem; }
     .mainWrap__content .mainSection {
       width: 74%;
       height: 100%;
-      background-color: #36393f; }
+      background-color: #36393f;
+      padding: 2rem 2rem; }
       .mainWrap__content .mainSection .messages .message {
         display: flex;
         align-items: flex-start;
@@ -111,15 +128,16 @@ body {
         .mainWrap__content .mainSection .messages .message__content {
           display: flex;
           flex-direction: column; }
-          .mainWrap__content .mainSection .messages .message__content--infos {
-            display: flex;
-            align-items: flex-end; }
-            .mainWrap__content .mainSection .messages .message__content--infos .author {
-              margin-right: 1rem;
-              color: #dcddde;
-              font-style: small-caps; }
-            .mainWrap__content .mainSection .messages .message__content--infos .date {
-              font-size: 1.2rem; }
+          .mainWrap__content .mainSection .messages .message__content--infos span {
+            padding-bottom: 0; }
+          .mainWrap__content .mainSection .messages .message__content--infos .author {
+            margin-right: 0.5rem;
+            color: #7289da;
+            font-style: small-caps;
+            font-size: 1.8rem; }
+          .mainWrap__content .mainSection .messages .message__content--infos .date {
+            font-size: 1.4rem;
+            color: #71757c; }
       .mainWrap__content .mainSection form {
         width: 100%;
         display: flex; }
