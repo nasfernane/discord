@@ -84,20 +84,38 @@
                 font-size: 1.2rem;
                 font-weight: 400;
                 text-transform: uppercase;
+                margin-bottom: 1rem;
             }
             &__channel {
+                margin-left: 1rem;
                 display: flex;
                 align-items: center;
 
-                img {
-                    height: 1.6rem;
-                    width: 1.6rem;
-                    margin-right: 0.6rem;
-                }
+                button {
+                    background: $color-darker;
+                    border: none;
+                    cursor: pointer;
+                    color: $color-grey;
+                    display: flex;
+                    align-items: center;
 
-                p {
-                    font-size: 1.6rem;
-                    padding-bottom: 0.5rem;
+                    img {
+                        height: 1.6rem;
+                        width: 1.6rem;
+                        margin-right: 0.4rem;
+                        transform: translateY(-0.2rem);
+                    }
+
+                    p {
+                        font-size: 1.8rem;
+                        padding-bottom: 0.5rem;
+                        color: #71757c;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border: none;
+                    }
                 }
             }
         }

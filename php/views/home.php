@@ -6,7 +6,7 @@
     <div class="mainWrap__header__content">
         <div class="navChan">   
             <img src="/assets/img/hashtag.png" alt="">
-            <p>annonces</p>
+            <p class="chanTitle">general</p>
         </div>
         <div class="navBar">
             <img src="../../assets/img/bell.png" alt="Bell">
@@ -22,15 +22,15 @@
     <section class="channelSection">
         <h3>Salons textuels</h3>
         <form class="channelSection__channel channelSection__channel--general" action="/php/scripts/handler.php?chan=general">
-            <button name="chan" value="general"><img src="/assets/img/hashtag.png" alt=""> general</button>
-            
+            <button name="chan" value="general"><img src="/assets/img/hashtag.png" alt=""><p>general</p></button>  
         </form>
         <form class="channelSection__channel channelSection__channel--live" action="/php/scripts/handler.php?chan=live">
-            <button name="chan" value="live"><img src="/assets/img/hashtag.png" alt=""> live</button>
+            <button name="chan" value="live"><img src="/assets/img/hashtag.png" alt=""><p>live</p></button>
         </form>
         <form class="channelSection__channel channelSection__channel--tutos" action="/php/scripts/handler.php?chan=tutos">
-            <img src="/assets/img/hashtag.png" alt="">
-            <p>tutos</p>
+            <button name="chan" value="live"><img src="/assets/img/hashtag.png" alt=""><p>tutos</p></button>
+            
+            
         </form>
     </section>
 

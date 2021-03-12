@@ -1,4 +1,5 @@
 let currentChan = 'general';
+let chanTitle = document.querySelector('.chanTitle');
 
 function getMessages(chan) {
     const ajaxRequest = new XMLHttpRequest();
@@ -94,18 +95,21 @@ document
         e.preventDefault();
         getMessages('general');
         currentChan = 'general';
+        chanTitle.innerText = 'general';
     });
 
 document.querySelector('.channelSection__channel--live').addEventListener('submit', function (e) {
     e.preventDefault();
     getMessages('live');
     currentChan = 'live';
+    chanTitle.innerText = 'live';
 });
 
 document.querySelector('.channelSection__channel--tutos').addEventListener('submit', function (e) {
     e.preventDefault();
     getMessages('tutos');
     currentChan = 'tutos';
+    chanTitle.innerText = 'tutos';
 });
 
 const interval = window.setInterval(function () {
