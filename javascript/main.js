@@ -85,7 +85,34 @@ function postMessage(event) {
     document.querySelector('#msgInput').value = '';
 }
 
+function displayUsers() {
+    const ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.open('GET', `../php/scripts/handler.php?task=users`);
+
+    ajaxRequest.onload = function () {
+        const results = JSON.parse(ajaxRequest.responseText);
+        let onlineUsers = '';
+        let offlineUsers = '';
+        const onlineUsersContainer = document.querySelector('.onlineUsers');
+        const offlineUsersContainer = document.querySelector('.offlineUsers');
+
+        results.forEach(user => {
+            if (user[4] === '1') {
+                onlineUsers += `<p>${user[2]}</p>`;
+            } else {
+                offlineUsers += `<p>${user[2]}</p>`;
+            }
+        });
+
+        onlineUsersContainer.innerHTML = onlineUsers;
+        offlineUsersContainer.innerHTML = offlineUsers;
+    };
+
+    ajaxRequest.send();
+}
+
 getMessages('general');
+displayUsers();
 
 document.querySelector('.mainSection__form').addEventListener('submit', postMessage);
 
@@ -118,4 +145,5 @@ document
 
 const interval = window.setInterval(function () {
     getMessages(currentChan);
+    displayUsers();
 }, 500);

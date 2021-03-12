@@ -15,6 +15,8 @@ if(array_key_exists("task", $_GET)) {
 
 if ($task === "write") {
     sendMessage($chan);
+} else if ($task === "users") {
+    displayUsers();
 } else {
     displayMessages($chan);
 }
@@ -73,3 +75,38 @@ function sendMessage($chan) {
 
     echo json_encode(["status" => "success"]);
 }
+
+function displayUsers() {
+    global $db;
+
+    // 1. affiche les 20 derniers messages
+    $results = $db->query("
+        SELECT * 
+        FROM users 
+        LIMIT 12
+    ");
+
+    // 2. traite les résultats
+    $users = $results->fetchALl();
+
+    // 3. affiche les données sous forme JSON
+    echo json_encode($users);
+}
+
+// function displayOfflineUsers() {
+//     global $db;
+
+//     // 1. affiche les 20 derniers messages
+//     $results = $db->query("
+//         SELECT * 
+//         FROM users 
+//         WHERE isLogged = '0'
+//         LIMIT 10
+//     ");
+
+//     // 2. traite les résultats
+//     $offlineUsers = $results->fetchALl();
+
+//     // 3. affiche les données sous forme JSON
+//     echo json_encode($onlineUsers);
+// }

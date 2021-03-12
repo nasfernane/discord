@@ -62,7 +62,16 @@
     </section>
 
     <section class="userSection">
-    <p>Utilisateurs</p>
+        <div class="userSection__category">
+            <h3>En ligne</h3>
+            <div class="onlineUsers"></div>
+        </div>
+
+        <div class="userSection__category">
+            <h3>Hors-ligne</h3>
+            <div class="offlineUsers"></div>
+        </div>
+        
     </section>
 </div>
 

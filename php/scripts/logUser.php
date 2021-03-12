@@ -15,7 +15,19 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $user->execute();
     $user = $user->fetchAll();
 
+
     if ($user) {
+        $userId = $user[0]['idUser'];
+
+        $userLogged = $db->prepare("
+            UPDATE users
+            SET isLogged='1'
+            WHERE idUser = $userId
+        ");
+
+        $userLogged->execute();
+
+
         // récupération du mot de passe de l'utilisateur enregistré, puis vérification du mot de passe entré
         $userPassword = $user[0]['password'];
         $isCorrectPw = password_verify($password, $userPassword);
@@ -24,7 +36,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if ($isCorrectPw) {
             session_start();
             $id_session = session_id();
-            $_SESSION['userid'] = $user[0]['idUser'];
+            $_SESSION['userid'] = $userId;
             $_SESSION['userName'] = $user[0]['name'];
             header('location: /');
         } else {

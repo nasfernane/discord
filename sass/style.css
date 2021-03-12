@@ -216,6 +216,20 @@ body {
           .mainWrap__content .mainSection form input:focus {
             outline: none;
             border: 0px; }
+    .mainWrap__content .userSection {
+      padding-top: 2rem; }
+      .mainWrap__content .userSection__category {
+        margin-bottom: 1rem; }
+        .mainWrap__content .userSection__category h3 {
+          font-size: 1.2rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+          margin-left: 1rem; }
+        .mainWrap__content .userSection__category div {
+          margin-left: 2rem; }
+        .mainWrap__content .userSection__category .offlineUsers p {
+          color: #71757c; }
 
 .loginContainer {
   margin: 0 auto;

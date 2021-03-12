@@ -257,5 +257,30 @@
                 }
             }
         }
+
+        .userSection {
+            padding-top: 2rem;
+
+            &__category {
+                margin-bottom: 1rem;
+                h3 {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                    margin-left: 1rem;
+                }
+
+                div {
+                    margin-left: 2rem;
+                }
+
+                .offlineUsers {
+                    p {
+                        color: #71757c;
+                    }
+                }
+            }
+        }
     }
 }
