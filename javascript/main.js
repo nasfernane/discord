@@ -90,7 +90,7 @@ getMessages('general');
 document.querySelector('.mainSection__form').addEventListener('submit', postMessage);
 
 document
-    .querySelector('.channelSection__channel--general')
+    .querySelector('.channelSection__Container__channel--general')
     .addEventListener('submit', function (e) {
         e.preventDefault();
         getMessages('general');
@@ -98,19 +98,23 @@ document
         chanTitle.innerText = 'general';
     });
 
-document.querySelector('.channelSection__channel--live').addEventListener('submit', function (e) {
-    e.preventDefault();
-    getMessages('live');
-    currentChan = 'live';
-    chanTitle.innerText = 'live';
-});
+document
+    .querySelector('.channelSection__Container__channel--live')
+    .addEventListener('submit', function (e) {
+        e.preventDefault();
+        getMessages('live');
+        currentChan = 'live';
+        chanTitle.innerText = 'live';
+    });
 
-document.querySelector('.channelSection__channel--tutos').addEventListener('submit', function (e) {
-    e.preventDefault();
-    getMessages('tutos');
-    currentChan = 'tutos';
-    chanTitle.innerText = 'tutos';
-});
+document
+    .querySelector('.channelSection__Container__channel--tutos')
+    .addEventListener('submit', function (e) {
+        e.preventDefault();
+        getMessages('tutos');
+        currentChan = 'tutos';
+        chanTitle.innerText = 'tutos';
+    });
 
 const interval = window.setInterval(function () {
     getMessages(currentChan);

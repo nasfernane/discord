@@ -79,42 +79,99 @@
         }
 
         .channelSection {
-            padding-left: 2rem;
-            h3 {
-                font-size: 1.2rem;
-                font-weight: 400;
-                text-transform: uppercase;
-                margin-bottom: 1rem;
-            }
-            &__channel {
-                margin-left: 1rem;
-                display: flex;
-                align-items: center;
+            padding: 0;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-                button {
-                    background: $color-darker;
-                    border: none;
-                    cursor: pointer;
-                    color: $color-grey;
+            &__Container {
+                h3 {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    margin-bottom: 1rem;
+                    margin-left: 1rem;
+                }
+                &__channel {
+                    margin-left: 2rem;
                     display: flex;
                     align-items: center;
 
-                    img {
-                        height: 1.6rem;
-                        width: 1.6rem;
-                        margin-right: 0.4rem;
-                        transform: translateY(-0.2rem);
-                    }
-
-                    p {
-                        font-size: 1.8rem;
-                        padding-bottom: 0.5rem;
-                        color: #71757c;
-                    }
-
-                    &:focus {
-                        outline: none;
+                    button {
+                        background: $color-darker;
                         border: none;
+                        cursor: pointer;
+                        color: $color-grey;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            height: 1.6rem;
+                            width: 1.6rem;
+                            margin-right: 0.4rem;
+                            transform: translateY(-0.2rem);
+                        }
+
+                        p {
+                            font-size: 1.8rem;
+                            padding-bottom: 0.5rem;
+                            color: #71757c;
+                        }
+
+                        &:focus {
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+            &__user {
+                background: #292b2f;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 1rem;
+                align-items: center;
+                height: 6rem;
+
+                &__container {
+                    display: flex;
+                    justify-content: flex-start;
+                    img {
+                        height: 4rem;
+                        width: 4rem;
+                        margin-right: 1rem;
+                    }
+
+                    &--infos {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+
+                        span:nth-child(1) {
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                        }
+
+                        span:nth-child(2) {
+                            font-size: 1.2rem;
+                            color: #71757c;
+                        }
+                    }
+                }
+
+                button {
+                    background: none;
+                    border: none;
+                    outline: none;
+
+                    .logout {
+                        height: 3rem;
+                        width: 3rem;
+                        margin-right: 1rem;
+                        cursor: pointer;
                     }
                 }
             }

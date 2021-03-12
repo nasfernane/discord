@@ -97,35 +97,74 @@ body {
       height: 100%;
       background-color: #2f3136; }
     .mainWrap__content .channelSection {
-      padding-left: 2rem; }
-      .mainWrap__content .channelSection h3 {
+      padding: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .mainWrap__content .channelSection__Container h3 {
         font-size: 1.2rem;
         font-weight: 400;
         text-transform: uppercase;
-        margin-bottom: 1rem; }
-      .mainWrap__content .channelSection__channel {
-        margin-left: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem; }
+      .mainWrap__content .channelSection__Container__channel {
+        margin-left: 2rem;
         display: flex;
         align-items: center; }
-        .mainWrap__content .channelSection__channel button {
+        .mainWrap__content .channelSection__Container__channel button {
           background: #2f3136;
           border: none;
           cursor: pointer;
           color: #dcddde;
           display: flex;
           align-items: center; }
-          .mainWrap__content .channelSection__channel button img {
+          .mainWrap__content .channelSection__Container__channel button img {
             height: 1.6rem;
             width: 1.6rem;
             margin-right: 0.4rem;
             transform: translateY(-0.2rem); }
-          .mainWrap__content .channelSection__channel button p {
+          .mainWrap__content .channelSection__Container__channel button p {
             font-size: 1.8rem;
             padding-bottom: 0.5rem;
             color: #71757c; }
-          .mainWrap__content .channelSection__channel button:focus {
+          .mainWrap__content .channelSection__Container__channel button:focus {
             outline: none;
             border: none; }
+      .mainWrap__content .channelSection__user {
+        background: #292b2f;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1rem;
+        align-items: center;
+        height: 6rem; }
+        .mainWrap__content .channelSection__user__container {
+          display: flex;
+          justify-content: flex-start; }
+          .mainWrap__content .channelSection__user__container img {
+            height: 4rem;
+            width: 4rem;
+            margin-right: 1rem; }
+          .mainWrap__content .channelSection__user__container--infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; }
+            .mainWrap__content .channelSection__user__container--infos span:nth-child(1) {
+              font-size: 1.4rem;
+              font-weight: bold; }
+            .mainWrap__content .channelSection__user__container--infos span:nth-child(2) {
+              font-size: 1.2rem;
+              color: #71757c; }
+        .mainWrap__content .channelSection__user button {
+          background: none;
+          border: none;
+          outline: none; }
+          .mainWrap__content .channelSection__user button .logout {
+            height: 3rem;
+            width: 3rem;
+            margin-right: 1rem;
+            cursor: pointer; }
     .mainWrap__content .mainSection {
       width: 74%;
       height: 100%;
