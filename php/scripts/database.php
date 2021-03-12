@@ -6,11 +6,7 @@ $id_session = session_id();
 
 // connexion à la bdd
 try {
-    $host = 'mysql:host=mysql-nasfernane.alwaysdata.net;dbname=nasfernane_discordphp';
-    $user = '216502_nf';
-    $password = 'blabladodo1337';
-
-    $db = new PDO($host, $user, $password);
+    $db = new PDO(getenv('DATABASE'), getenv('DATABASE_USER'), getenv('DATABASE_PASSWORD'));
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $err) {
