@@ -1,6 +1,8 @@
-function getMessages() {
+let currentChan = 'general';
+
+function getMessages(chan) {
     const ajaxRequest = new XMLHttpRequest();
-    ajaxRequest.open('GET', '../php/scripts/handler.php');
+    ajaxRequest.open('GET', `../php/scripts/handler.php?chan=${chan}`);
 
     ajaxRequest.onload = function () {
         const results = JSON.parse(ajaxRequest.responseText);
@@ -72,18 +74,40 @@ function postMessage(event) {
     data.append('content', content.value);
 
     const ajaxRequest = new XMLHttpRequest();
-    ajaxRequest.open('POST', '../php/scripts/handler.php?task=write');
+    ajaxRequest.open('POST', `../php/scripts/handler.php?task=write&chan=${currentChan}`);
 
     ajaxRequest.onload = function () {
-        getMessages();
+        getMessages(currentChan);
     };
 
     ajaxRequest.send(data);
     document.querySelector('#msgInput').value = '';
 }
 
-const interval = window.setInterval(getMessages, 500);
-
-getMessages();
+getMessages('general');
 
 document.querySelector('.mainSection__form').addEventListener('submit', postMessage);
+
+document
+    .querySelector('.channelSection__channel--general')
+    .addEventListener('submit', function (e) {
+        e.preventDefault();
+        getMessages('general');
+        currentChan = 'general';
+    });
+
+document.querySelector('.channelSection__channel--live').addEventListener('submit', function (e) {
+    e.preventDefault();
+    getMessages('live');
+    currentChan = 'live';
+});
+
+document.querySelector('.channelSection__channel--tutos').addEventListener('submit', function (e) {
+    e.preventDefault();
+    getMessages('tutos');
+    currentChan = 'tutos';
+});
+
+const interval = window.setInterval(function () {
+    getMessages(currentChan);
+}, 500);

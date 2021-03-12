@@ -3,24 +3,34 @@
 require 'database.php';
 
 $task = "list";
+$chan = "general";
+
+if(array_key_exists("chan", $_GET)) {
+    $chan = $_GET['chan'];
+}
 
 if(array_key_exists("task", $_GET)) {
     $task = $_GET['task'];
 }
 
 if ($task === "write") {
-    sendMessage();
+    sendMessage($chan);
 } else {
-    displayMessages();
+    displayMessages($chan);
 }
 
 
-function displayMessages() {
+
+
+// affiche les messages, par défaut ceux du chan général
+function displayMessages($chan) {
     global $db;
+
     // 1. affiche les 20 derniers messages
     $results = $db->query("
         SELECT * 
         FROM messages 
+        WHERE chan = '$chan'
         ORDER BY sentAt DESC
         LIMIT 12
     ");
@@ -32,7 +42,7 @@ function displayMessages() {
     echo json_encode($messages);
 }
 
-function sendMessage() {
+function sendMessage($chan) {
     global $db;
 
     if (!array_key_exists('content', $_POST)) {
@@ -44,17 +54,19 @@ function sendMessage() {
     $userId = $_SESSION['userid'];
     $userName = $_SESSION['userName'];
     $content = $_POST['content'];
+    // $chan = $_POST['chan'];
     // 2. Créer une requête qui permet d'insérer ces données
 
     $query = $db->prepare("
         INSERT INTO messages
-        SET idUser = :userid, content = :content, author = :userName
+        SET idUser = :userid, content = :content, author = :userName, chan = :chan
     ");
 
     $query->execute([
         ':userid' => $userId,
         ':content' => $content,
-        ':userName' => $userName
+        ':userName' => $userName,
+        ':chan' => $chan
     ]);
 
     // 3. Donner un statut de success ou d'erreur au format JSON

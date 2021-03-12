@@ -21,18 +21,17 @@
 
     <section class="channelSection">
         <h3>Salons textuels</h3>
-        <div class="channelSection__channel">
-            <img src="/assets/img/hashtag.png" alt="">
-            <p>general</p>
-        </div>
-        <div class="channelSection__channel">
-            <img src="/assets/img/hashtag.png" alt="">
-            <p>live</p>
-        </div>
-        <div class="channelSection__channel">
+        <form class="channelSection__channel channelSection__channel--general" action="/php/scripts/handler.php?chan=general">
+            <button name="chan" value="general"><img src="/assets/img/hashtag.png" alt=""> general</button>
+            
+        </form>
+        <form class="channelSection__channel channelSection__channel--live" action="/php/scripts/handler.php?chan=live">
+            <button name="chan" value="live"><img src="/assets/img/hashtag.png" alt=""> live</button>
+        </form>
+        <form class="channelSection__channel channelSection__channel--tutos" action="/php/scripts/handler.php?chan=tutos">
             <img src="/assets/img/hashtag.png" alt="">
             <p>tutos</p>
-        </div>
+        </form>
     </section>
 
 
@@ -41,7 +40,7 @@
         <div class="messages">
         </div>
 
-        <form class="mainSection__form" action="/php/scripts/handler.php?task=write" method="POST">
+        <form class="mainSection__form" action="/php/scripts/handler.php?" >
             <label for="msgInput"><img src="/assets/img/plus.png" alt=""></label>
             <input type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live" autocomplete="off">
         </form>
