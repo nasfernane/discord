@@ -182,11 +182,32 @@
             height: 100%;
             background-color: $color-dark;
             padding: 2rem 2rem;
+            padding-right: 1rem;
             display: flex;
             flex-direction: column;
-            align-items: space-between;
+            justify-content: flex-end;
 
             .messages {
+                overflow-y: auto;
+                scroll-behavior: smooth;
+
+                &::-webkit-scrollbar {
+                    width: 10px;
+                    height: 10px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: #2f3136;
+                    border-radius: 15px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #2f3136;
+                }
+                &::-webkit-scrollbar-track {
+                    background: #dcddde;
+                    border-radius: 9px;
+                    box-shadow: inset -1px -7px 15px #36393f;
+                }
+
                 .message {
                     display: flex;
                     align-items: flex-start;
@@ -252,6 +273,7 @@
                     padding: 1rem 0.5rem;
                     background-color: $color-lighter;
                     color: $color-white;
+                    margin-right: 1rem;
 
                     &:focus {
                         outline: none;

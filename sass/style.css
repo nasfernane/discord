@@ -170,30 +170,46 @@ body {
       height: 100%;
       background-color: #36393f;
       padding: 2rem 2rem;
+      padding-right: 1rem;
       display: flex;
       flex-direction: column;
-      align-items: space-between; }
-      .mainWrap__content .mainSection .messages .message {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 1rem; }
-        .mainWrap__content .mainSection .messages .message img {
-          width: 4rem;
-          height: 4rem;
-          margin-right: 2rem; }
-        .mainWrap__content .mainSection .messages .message__content {
+      justify-content: flex-end; }
+      .mainWrap__content .mainSection .messages {
+        overflow-y: auto;
+        scroll-behavior: smooth; }
+        .mainWrap__content .mainSection .messages::-webkit-scrollbar {
+          width: 10px;
+          height: 10px; }
+        .mainWrap__content .mainSection .messages::-webkit-scrollbar-thumb {
+          background: #2f3136;
+          border-radius: 15px; }
+        .mainWrap__content .mainSection .messages::-webkit-scrollbar-thumb:hover {
+          background: #2f3136; }
+        .mainWrap__content .mainSection .messages::-webkit-scrollbar-track {
+          background: #dcddde;
+          border-radius: 9px;
+          box-shadow: inset -1px -7px 15px #36393f; }
+        .mainWrap__content .mainSection .messages .message {
           display: flex;
-          flex-direction: column; }
-          .mainWrap__content .mainSection .messages .message__content--infos span {
-            padding-bottom: 0; }
-          .mainWrap__content .mainSection .messages .message__content--infos .author {
-            margin-right: 0.5rem;
-            color: #7289da;
-            font-style: small-caps;
-            font-size: 1.8rem; }
-          .mainWrap__content .mainSection .messages .message__content--infos .date {
-            font-size: 1.4rem;
-            color: #71757c; }
+          align-items: flex-start;
+          margin-bottom: 1rem; }
+          .mainWrap__content .mainSection .messages .message img {
+            width: 4rem;
+            height: 4rem;
+            margin-right: 2rem; }
+          .mainWrap__content .mainSection .messages .message__content {
+            display: flex;
+            flex-direction: column; }
+            .mainWrap__content .mainSection .messages .message__content--infos span {
+              padding-bottom: 0; }
+            .mainWrap__content .mainSection .messages .message__content--infos .author {
+              margin-right: 0.5rem;
+              color: #7289da;
+              font-style: small-caps;
+              font-size: 1.8rem; }
+            .mainWrap__content .mainSection .messages .message__content--infos .date {
+              font-size: 1.4rem;
+              color: #71757c; }
       .mainWrap__content .mainSection form {
         width: 100%;
         display: flex; }
@@ -215,7 +231,8 @@ body {
           border: 0px;
           padding: 1rem 0.5rem;
           background-color: #40444b;
-          color: #fff; }
+          color: #fff;
+          margin-right: 1rem; }
           .mainWrap__content .mainSection form input:focus {
             outline: none;
             border: 0px; }

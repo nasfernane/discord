@@ -1,4 +1,6 @@
+// valeur par défaut du csalon choisi par l'utilisateur
 let currentChan = 'general';
+// récupération du titre de salon
 let chanTitle = document.querySelector('.chanTitle');
 
 function getMessages(chan) {
@@ -59,9 +61,9 @@ function getMessages(chan) {
             .join('');
 
         const chatBox = document.querySelector('.messages');
-
         chatBox.innerHTML = html;
-        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // chatBox.scrollTop = chatBox.scrollHeight;
     };
 
     ajaxRequest.send();

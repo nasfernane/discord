@@ -29,7 +29,7 @@ function displayMessages($chan) {
         FROM messages 
         WHERE chan = '$chan'
         ORDER BY sentAt DESC
-        LIMIT 12
+        LIMIT 50
     ");
 
     // 2. traite les résultats
