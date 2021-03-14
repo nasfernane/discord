@@ -2,17 +2,15 @@
 
 require 'database.php';
 
+// valeurs par défault
 $task = "list";
 $chan = "general";
 
-if(array_key_exists("chan", $_GET)) {
-    $chan = $_GET['chan'];
-}
+// modification des valeurs en fonction des choix utilisateurs
+if(array_key_exists("chan", $_GET)) $chan = $_GET['chan'];
+if(array_key_exists("task", $_GET)) $task = $_GET['task'];
 
-if(array_key_exists("task", $_GET)) {
-    $task = $_GET['task'];
-}
-
+// aiguillage des requêtes SQL en fonction des requêtes GET
 if ($task === "write") {
     sendMessage($chan);
 } else if ($task === "users") {
@@ -21,14 +19,11 @@ if ($task === "write") {
     displayMessages($chan);
 }
 
-
-
-
 // affiche les messages, par défaut ceux du chan général
 function displayMessages($chan) {
     global $db;
 
-    // 1. affiche les 20 derniers messages
+    // 1. affiche les 12 derniers messages
     $results = $db->query("
         SELECT * 
         FROM messages 
@@ -44,26 +39,28 @@ function displayMessages($chan) {
     echo json_encode($messages);
 }
 
+// envoi d'un message, par défaut sur le chan général
 function sendMessage($chan) {
     global $db;
 
+    // renvoie une erreur en cas de message vide
     if (!array_key_exists('content', $_POST)) {
         echo json_encode(["status" => "error", "message" => "Message inexistant"]);
         return;
     }
 
-    // 1. Analyser les paramètres passés en POST
+    // 1. récupération en variables des paramètres passés en requêtes POST et SESSION
     $userId = $_SESSION['userid'];
     $userName = $_SESSION['userName'];
     $content = $_POST['content'];
-    // $chan = $_POST['chan'];
-    // 2. Créer une requête qui permet d'insérer ces données
 
+    // 2. Insertion du nouveau message
     $query = $db->prepare("
         INSERT INTO messages
         SET idUser = :userid, content = :content, author = :userName, chan = :chan
     ");
 
+    // 3. Execution de la requête
     $query->execute([
         ':userid' => $userId,
         ':content' => $content,
@@ -71,19 +68,20 @@ function sendMessage($chan) {
         ':chan' => $chan
     ]);
 
-    // 3. Donner un statut de success ou d'erreur au format JSON
-
+    // 3. Status success à la requête
     echo json_encode(["status" => "success"]);
 }
 
+
+// affichage des utilisateurs
 function displayUsers() {
     global $db;
 
-    // 1. affiche les 20 derniers messages
+    // 1. affichage des utilisateurs
     $results = $db->query("
         SELECT * 
-        FROM users 
-        LIMIT 12
+        FROM users
+        LIMIT 20
     ");
 
     // 2. traite les résultats
@@ -93,20 +91,3 @@ function displayUsers() {
     echo json_encode($users);
 }
 
-// function displayOfflineUsers() {
-//     global $db;
-
-//     // 1. affiche les 20 derniers messages
-//     $results = $db->query("
-//         SELECT * 
-//         FROM users 
-//         WHERE isLogged = '0'
-//         LIMIT 10
-//     ");
-
-//     // 2. traite les résultats
-//     $offlineUsers = $results->fetchALl();
-
-//     // 3. affiche les données sous forme JSON
-//     echo json_encode($onlineUsers);
-// }

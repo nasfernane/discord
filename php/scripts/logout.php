@@ -1,9 +1,10 @@
 <?php
 require 'database.php';
 
-// met l'utilisateur en offline dans la bdd
+// récupération de l'id user
 $userId = $_SESSION['userid'];
 
+// modification de son statut en offline
 $userLogOut = $db->prepare("
             UPDATE users
             SET isLogged='0'
