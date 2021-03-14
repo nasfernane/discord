@@ -62,6 +62,7 @@ function getMessages(chan) {
 
         const chatBox = document.querySelector('.messages');
         chatBox.innerHTML = html;
+        chatBox.scrollTop = chatBox.scrollHeight;
     };
 
     ajaxRequest.send();
@@ -114,10 +115,10 @@ function displayUsers() {
 getMessages('general');
 displayUsers();
 
-window.addEventListener('load', function () {
-    const chatBox = document.querySelector('.messages');
-    chatBox.scrollTop = chatBox.scrollHeight;
-});
+// window.addEventListener('load', function () {
+//     const chatBox = document.querySelector('.messages');
+//     chatBox.scrollTop = chatBox.scrollHeight;
+// });
 
 document.querySelector('.mainSection__form').addEventListener('submit', postMessage);
 
