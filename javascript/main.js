@@ -62,7 +62,7 @@ function getMessages(chan) {
 
         const chatBox = document.querySelector('.messages');
 
-        if (chatBox.innerHTML !== html) {
+        if (chatBox.innerHTML != html) {
             chatBox.innerHTML = html;
             chatBox.scrollTop = chatBox.scrollHeight;
         }
