@@ -3,15 +3,21 @@ let currentChan = 'general';
 // récupération du titre de salon
 let chanTitle = document.querySelector('.chanTitle');
 
+// affichage des messages
 function getMessages(chan) {
     const ajaxRequest = new XMLHttpRequest();
     ajaxRequest.open('GET', `../php/scripts/handler.php?chan=${chan}`);
 
+    // au chargement de la requête
     ajaxRequest.onload = function () {
+        // stocke les résultats
         const results = JSON.parse(ajaxRequest.responseText);
+
+        // création d'une chaîne de caractère basée sur chaque élément des résultats
         const html = results
             .reverse()
             .map(function (message) {
+                // traitement des dates
                 const date = new Date();
                 const messageYear = message.sentAt.substring(0, 4);
                 const actualYear = date.getFullYear();
@@ -21,24 +27,29 @@ function getMessages(chan) {
                 const messageDay = message.sentAt.substring(8, 10);
                 const actualDay = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 
+                // affichage de la date du message en fonction du temps qui la sépare de la date de visionnage du message
                 let displayMessage;
 
+                // si le message date d'ajourd'hui
                 if (
                     messageYear == actualYear &&
                     messageMonth == actualMonth &&
                     messageDay == actualDay
                 ) {
                     displayMessage = `Aujourd'hui à ${message.sentAt.substring(11, 16)}`;
+                    // sinon, si le message date d'hier
                 } else if (
                     messageYear == actualYear &&
                     messageMonth == actualMonth &&
                     messageDay == actualDay - 1
                 ) {
                     displayMessage = `Hier à ${message.sentAt.substring(11, 16)}`;
+                    // sinon par défaut, affichage de la date complète
                 } else {
                     displayMessage = `${messageDay}/${messageMonth}/${messageYear}`;
                 }
 
+                // retourne un bloc html pour chaque message
                 return `
                 <div class="message">
                     <img src="../assets/img/user.png" alt="" />
@@ -47,21 +58,21 @@ function getMessages(chan) {
                             <p>
                                 <span class="author">${message.author}</span>
                                 <span class="date">${displayMessage}</span>
-
                             </p>
-                            
-                        </div>
-                        
+                        </div>                        
                         <span class="content">${message.content}</span>
                     </div>
                 </div>
             
             `;
             })
+            // assemble tous les messages dans la chaîne de caractères
             .join('');
 
+        // récupération du conteneur des messages
         const chatBox = document.querySelector('.messages');
 
+        // mise à jour
         if (chatBox.innerHTML != html) {
             chatBox.innerHTML = html;
             chatBox.scrollTop = chatBox.scrollHeight;
@@ -71,10 +82,12 @@ function getMessages(chan) {
     ajaxRequest.send();
 }
 
+// envoi d'un nouveau message
 function postMessage(event) {
     event.preventDefault();
     const content = document.querySelector('#msgInput');
 
+    // création d'un objet data
     const data = new FormData();
     data.append('content', content.value);
 
