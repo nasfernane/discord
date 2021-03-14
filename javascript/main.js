@@ -61,8 +61,11 @@ function getMessages(chan) {
             .join('');
 
         const chatBox = document.querySelector('.messages');
-        chatBox.innerHTML = html;
-        chatBox.scrollTop = chatBox.scrollHeight;
+
+        if (chatBox.innerHTML !== html) {
+            chatBox.innerHTML = html;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
     };
 
     ajaxRequest.send();
