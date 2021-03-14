@@ -52,7 +52,7 @@ function sendMessage($chan) {
     // 1. récupération en variables des paramètres passés en requêtes POST et SESSION
     $userId = $_SESSION['userid'];
     $userName = $_SESSION['userName'];
-    $content = $_POST['content'];
+    $content = htmlentities($_POST['content']);
 
     // 2. Insertion du nouveau message
     $query = $db->prepare("
