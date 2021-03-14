@@ -62,7 +62,7 @@
 
             <form class="mainSection__form" action="/php/scripts/handler.php?" >
                 <label for="msgInput"><img src="/assets/img/plus.png" alt=""></label>
-                <input type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live" autocomplete="off">
+                <input min-length="1" type="text" id ="msgInput" name="content" class="mainSection__form--input" placeholder="Envoyer un message à #live" autocomplete="off">
             </form>
         </section>
 

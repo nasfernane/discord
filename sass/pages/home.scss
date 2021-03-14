@@ -182,6 +182,9 @@
             height: 100%;
             background-color: $color-dark;
             padding: 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: space-between;
 
             .messages {
                 .message {
